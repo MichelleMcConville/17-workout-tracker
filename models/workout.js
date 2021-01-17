@@ -6,4 +6,12 @@ const WorkoutSchema = new Schema({
     type: Date,
     default: () => new Data(),
   },
+
+  exercises: [{
+    type: {
+      type: String,
+      trim: true,
+      required: "Enter exercise type",
+    }
+  }]
 });
