@@ -7,5 +7,11 @@ module.exports = function(app) {
       .then((data) => { res.json(data); })
       .catch((err) => { res.json(err); });
   });
-  
+
+  app.get("/api/workouts/range", ({ body, params }, res) => {
+    Workout.find({})
+      .then(data => {res.json(data);})
+      .catch(err => {res.json(err);});
+  });
+
 }
