@@ -27,3 +27,6 @@ mongoose.connect(process.env.MONGODB_URI,
 //   useCreateIndex: true,
 //   useFindAndModify: false,
 // });
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
