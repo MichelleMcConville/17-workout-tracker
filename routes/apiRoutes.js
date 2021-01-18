@@ -14,4 +14,11 @@ module.exports = function(app) {
       .catch(err => {res.json(err);});
   });
 
+  app.post("/api/workouts/:id", ({ body, params }, res) => {
+    const workout = new Workout(req.body);
+    Workout.create(workout)
+      .then(data => {res.json(data);})
+      .catch(err => {res.json(err);});
+  });
+
 }
