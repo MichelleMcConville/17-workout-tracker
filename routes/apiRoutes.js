@@ -1,7 +1,7 @@
 // const Workout = require("../models/workout.js");
 import Workout from "../models/workout.js";
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/api/workouts", ({ body, params }, res) => {
     Workout.find({})
       .then((data) => { res.json(data); })
@@ -21,4 +21,12 @@ module.exports = function(app) {
       .catch(err => {res.json(err);});
   });
 
-}
+  app.put("/api/workouts/:id", ({ body, params }, res) => {
+    Workout.findByIdAndUpdate(params.id,
+        { $push: { exercises: body}},
+        { new: true, runValidators: true }
+      )
+        .then(data => {res.json(data);})
+        .catch(err => {res.json(err);});
+  });
+};
