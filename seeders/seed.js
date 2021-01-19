@@ -1,14 +1,18 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect("mongodb://localhost/workout",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 let workoutSeed = [
   {
-    day: new Date().setDate(new Date().getDate() - 29),
+    day: new Date().setDate(new Date().getDate() - 1),
     exercises: [
       {
         // Chest: Monday
@@ -22,7 +26,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 28),
+    day: new Date().setDate(new Date().getDate() - 1),
     exercises: [
       {
         // Chest: Monday
@@ -36,7 +40,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 27),
+    day: new Date().setDate(new Date().getDate() - 1),
     exercises: [
       {
         // Chest: Monday
@@ -50,7 +54,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 26),
+    day: new Date().setDate(new Date().getDate() - 1),
     exercises: [
       {
         // Chest: Monday
@@ -64,7 +68,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 25),
+    day: new Date().setDate(new Date().getDate() - 1),
     exercises: [
       {
         // Chest: Monday
@@ -78,7 +82,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 24),
+    day: new Date().setDate(new Date().getDate() - 1),
     exercises: [
       {
         // Chest: Monday
@@ -92,7 +96,21 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 23),
+    day: new Date().setDate(new Date().getDate() - 1),
+    exercises: [
+      {
+        // M-W-F
+        type: "resistance",
+        name: "Abs",
+        duration: 10,
+        weight: 100,
+        reps: 15,
+        sets: 8
+      }
+    ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate() - 2),
     exercises: [
       {
         // Back: Tuesday
@@ -106,7 +124,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 22),
+    day: new Date().setDate(new Date().getDate() - 2),
     exercises: [
       {
         // Back: Tuesday
@@ -120,7 +138,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 21)),
+    day: new Date(new Date().setDate(new Date().getDate() - 2)),
     exercises: [
       {
         // Back: Tuesday
@@ -134,7 +152,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 20)),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         // Wednesday: Shoulders
@@ -148,7 +166,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 19)),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         // Wednesday: Shoulders
@@ -162,7 +180,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 18)),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         // Wednesday: Shoulders
@@ -176,7 +194,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 17)),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         // Wednesday: Shoulders
@@ -190,7 +208,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 16)),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         // Wednesday: Shoulders
@@ -204,7 +222,21 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 15)),
+    day: new Date().setDate(new Date().getDate() - 3),
+    exercises: [
+      {
+        // M-W-F
+        type: "resistance",
+        name: "Abs",
+        duration: 10,
+        weight: 100,
+        reps: 15,
+        sets: 8
+      }
+    ]
+  },
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -218,7 +250,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 14)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -232,7 +264,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 13)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -246,7 +278,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 12)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -260,7 +292,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 11)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -274,7 +306,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 10)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -288,7 +320,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 9)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -302,7 +334,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 8)),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         // Thursday: Arms
@@ -316,7 +348,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 7)),
+    day: new Date(new Date().setDate(new Date().getDate() - 5)),
     exercises: [
       {
         // Friday: Legs
@@ -329,7 +361,7 @@ let workoutSeed = [
       }
     ]
   },{
-    day: new Date(new Date().setDate(new Date().getDate() - 6)),
+    day: new Date(new Date().setDate(new Date().getDate() - 5)),
     exercises: [
       {
         // Friday: Legs
@@ -357,7 +389,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 4)),
+    day: new Date(new Date().setDate(new Date().getDate() - 5)),
     exercises: [
       {
         // Friday: Legs
@@ -371,7 +403,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate() - 3),
+    day: new Date().setDate(new Date().getDate() - 5),
     exercises: [
       {
         // M-W-F
@@ -385,7 +417,19 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 2)),
+    day: new Date(new Date().setDate(new Date().getDate() - 6)),
+    exercises: [
+      {
+        // Sat-Sun
+        type: "cardio",
+        name: "Elliptical",
+        duration: 45,
+        distance: 6
+      }
+    ]
+  },
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 7)),
     exercises: [
       {
         // Sat-Sun
