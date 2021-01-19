@@ -1,5 +1,4 @@
-// const path = require("path");
-import path from "path";
+const path = require("path");
 
 module.exports = function (app) {
   app.get("/", (req, res) => {
