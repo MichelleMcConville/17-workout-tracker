@@ -1,22 +1,22 @@
 const db = require("../models");
 
 module.exports = function (app) {
+  app.post("/api/workouts", ({ body }, res) => {
+    db.Workout.create(body)
+       .then(dbWorkout => { res.json(dbWorkout) })
+       .catch(err => { console.log(err); });
+  });
+
   app.get("/api/workouts", (req, res) => {
-    db.Workout.find({})
-      .then((data) => { res.json(data); })
-      .catch((err) => { res.json(err); });
+    db.Workout.find({}).sort(({ date: 1 }))
+      .then(dbWorkout => { res.json(dbWorkout) })
+      .catch(err => { console.log(err); });
   });
 
   app.get("/api/workouts/range", (req, res) => {
-    db.Workout.find({})
-      .then(data => {res.json(data);})
-      .catch(err => {res.json(err);});
-  });
-
-  app.post("/api/workouts", ({ body }, res) => {
-   db.Workout.create(body)
-      .then(data => {res.json(data);})
-      .catch(err => {res.json(err);});
+    db.Workout.find().sort(({ date: 1 }))
+      .then(dbWorkout => { res.json(dbWorkout) })
+      .catch(err => { console.log(err); });
   });
 
   app.put("/api/workouts/:id", ({ body, params }, res) => {
@@ -24,7 +24,7 @@ module.exports = function (app) {
         { $push: { exercises: body}},
         { new: true, runValidators: true }
       )
-        .then(data => {res.json(data);})
-        .catch(err => {res.json(err);});
+        .then(dbWorkout => {res.json(dbWorkout);})
+        .catch(err => { console.log(err); });
   });
 };
