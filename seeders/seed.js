@@ -1,6 +1,9 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
+// Use this option to seed mongoDB for Heroku side
+// mongoose.connect("COPY YOUR HEROKU CONFIG VARS VALUE HERE FOR MONGODB_URI", { 
+// Use this option to seed Robo3T for local side
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
