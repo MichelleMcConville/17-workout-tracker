@@ -17,17 +17,11 @@ A full stack app to view & create your daily workouts
 
 ## Installation 🛠️ <a name="installation"></a>
 
-```.
 Just a Website. No installation required.
-```
 
 ## Usage ⚙️ <a name="usage"></a>
 
-```.
-Select the link below & enjoy!
-```
-
-> [Workout Tracker](https://mchel-workout-tracker.herokuapp.com/) 🔗
+https://mchel-workout-tracker.herokuapp.com/
 
 ## Contributing 🤝 <a name="contributing"></a>
 
